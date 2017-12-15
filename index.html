@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title</title>
-</head>
-<body>
-	xiaotin
-</body>
-</html>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>vue-video</title><script>;(function (win) {
+            var doc = win.document;
+            var docEl = doc.documentElement;
+            var tid;
+
+            function refreshRem() {
+                var width = docEl.getBoundingClientRect().width;
+                if (width > 540) {
+                    width = 540;
+                }
+                var rem = width / 7.5;
+                docEl.style.fontSize = rem + 'px';
+            }
+
+            win.addEventListener('resize', function () {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+            win.addEventListener('pageshow', function (e) {
+                if (e.persisted) {
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            refreshRem();
+
+        })(window);</script><link href=./static/css/app.9f6b3851ef4bb102fc65e66a46c3b744.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.dd8ed2f376fe5e0d2fb7.js></script><script type=text/javascript src=./static/js/vendor.c13937fde9617c8deb45.js></script><script type=text/javascript src=./static/js/app.073aa39f31d06d6d8353.js></script></body></html>
